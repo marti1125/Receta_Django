@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/'>Inicio</a></li>
+				<li><a href='/usuarios'>Usuarios Registrados</a></li>
+				<li><a href='/recetas'>Recetas</a></li>
+				<li><a href='/bebidas'>Bebidas</a></li>
+				<li><a href='/sobre'>Sobre</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h1>Colaboradores</h1>
+		<ul>
+			{% for dato in usuarios %}
+				<li>{{dato.username}} - <em>{{dato.email}}</em>
+					<ul>
+						{% for item in recetas %}
+							{% if item.usuario == dato %}
+								<li>{{item}}</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+</body>
+</html>

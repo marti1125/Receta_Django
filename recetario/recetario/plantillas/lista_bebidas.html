@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<title>Lista de bebidas de ejemplo</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/estilo.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/'>Inicio</a></li>
+				<li><a href='/usuarios'>Usuarios Registrados</a></li>
+				<li><a href='/recetas'>Recetas</a></li>
+				<li><a href='/bebidas'>Bebidas</a></li>
+				<li><a href='/sobre'>Sobre</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h1>Recetario de Bebidas</h1>
+			{% for elemento in lista %}
+			<ul>
+				<li><strong>{{elemento.nombre}}</strong></li>
+				<li>{{elemento.ingredientes}}</li>
+				<li>{{elemento.preparacion}}</li>
+			</ul>
+			{% endfor %}
+	</section>
+</body>
+</html>
