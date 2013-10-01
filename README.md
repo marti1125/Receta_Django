@@ -1,4 +1,4 @@
-###Recetario(Incompleto)
+###Recetario
 
 Instalar Django
 * pip install django
